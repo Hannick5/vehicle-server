@@ -11,7 +11,7 @@ dist:
 
 .PHONY: build 
 build:
-	go build -o /dist/server /cmd/server
+	go build -o ./dist/server ./cmd/server
 
 DB_CONTAINER_NAME=vehicle-server-dev
 POSTGRES_USER=vehicle-server
@@ -27,7 +27,7 @@ dev:
 
 .PHONY: dev_db
 dev_db:
-  docker container run \
+	docker container run \
 		--detach \
 		--rm \
 		--name=$(DB_CONTAINER_NAME) \
