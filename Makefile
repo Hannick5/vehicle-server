@@ -13,7 +13,7 @@ dist:
 build:
 	go build -o ./dist/server ./cmd/server
 
-IMAGE?=Hannick5/vehicle-server
+IMAGE?=hannick5/vehicle-server
 TAG?=dev
 DB_CONTAINER_NAME=vehicle-server-dev
 POSTGRES_USER=vehicle-server
