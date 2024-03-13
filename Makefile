@@ -1,5 +1,5 @@
 .PHONY: all
-all: clean dist build
+all: clean unit_test integration_test build package
 
 .PHONY: clean
 clean:
@@ -13,6 +13,8 @@ dist:
 build:
 	go build -o ./dist/server ./cmd/server
 
+IMAGE?=<VOTRE_USERNAME_DOCKERHUB>/vehicle-server
+TAG?=dev
 DB_CONTAINER_NAME=vehicle-server-dev
 POSTGRES_USER=vehicle-server
 POSTGRES_PASSWORD=secret
@@ -46,3 +48,7 @@ unit_test:
 
 integration_test:
 	go test -v -count=1 --tags=integration ./app/
+
+.PHONY: package
+package:
+  docker build -t $(IMAGE):$(TAG) .
