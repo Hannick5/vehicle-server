@@ -14,7 +14,3 @@ jobs:
         run: go version
       - name: Run Tests
         run: make all
-      - name: Building
-        run: make build
-      - name: Unit tests
-        run: make unit_test integration_test
