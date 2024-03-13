@@ -51,4 +51,4 @@ integration_test:
 
 .PHONY: package
 package:
-  docker build -t $(IMAGE):$(TAG) .
+	docker build -t $(IMAGE):$(TAG) .
