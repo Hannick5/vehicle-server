@@ -46,8 +46,6 @@ func (d *DeleteHandler) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
 		return
 	} else {
 		http.Error(rw, "Vehicle not found", http.StatusNotFound)
-		// rw.WriteHeader(http.StatusNotFound)
-		// fmt.Println("Vehicle not found")
 		return
 	}
 
